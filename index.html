@@ -4,22 +4,48 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="En CineMarket encontraras todas las peliculas que necesitas">
+    <meta name="description" content="The place to find all your movies">
     <meta name="keywords" content="">
-    <script type="text/javascript" src="./javascript/main.js"></script>
-    <title>Fotocasa Hipotecas</title>
+    <script type="module" src="./javascript/main.js"></script>
+    <title>CineMarket</title>
     <link rel="shortcut icon" type="image/x-icon" href="https://frtassets.fotocasa.es/img/favicon.ico?v=2">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
     <link href="./css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<header class="header">
-<h1>Hola mundo</h1>
+<header class="cm-header">
+    <!-- <img src="images/head.jpg" class="header-background">-->
+    <h1>CineMarket</h1>
+    <h2>The place to find all your movies</h2>
 </header>
-<main class="canvas">
-<button onclick="traer()">Obtener Peliculas</button>
-<div id="contenido" class="card-wrapper"></div>
+<main>
+    <section class="cm-section">
+        <form id="myForm" class="cm-form cm-canvas">
+            <div class="cm-form-search">
+                <input type="text" id="NameMovie" name="title" minlength="3" autofocus required aria-required="true" placeholder="Enter the title" class="cm-form-input">
+                <label for="NameMovie" class="cm-form-label">Enter the title</label>
+            </div>
+            <input type="submit" value="Search" class="cm-button cm-form-submit">
+        </form>
+        <div id="Filters" class="cm-canvas cm-filters">
+            <label for="order">Order for:</label>
+            <div class="cm-select">
+                <select id="OrderType" onchange="orderArray()">
+                    <option value="Title">Title</option>
+                    <option value="Year">Year</option>
+                    <option value="imdbRating">Rating</option>
+                </select>
+            </div>
+            <div class="cm-select">
+                <select id="OrderPosition" onchange="orderArray()">
+                    <option value="asc">Ascendent</option>
+                    <option value="desc">Descendent</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <div id="Content" class="cm-cardWrapper cm-canvas"></div>
 </main>
 </body>
 </html>

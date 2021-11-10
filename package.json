@@ -1,0 +1,24 @@
+{
+  "name": "marketcine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "http-server './' -p 8082",
+    "phoenix": "rm -Rf node_modules && rm -Rf package-lock.json && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Osgar/MarketCine.git"
+  },
+  "author": "Oscar Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Osgar/MarketCine/issues"
+  },
+  "homepage": "https://github.com/Osgar/MarketCine#readme",
+  "devDependencies": {
+    "http-server": "^0.12.1"
+  }
+}
