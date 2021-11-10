@@ -11,20 +11,14 @@ formElement.addEventListener('submit', evt => {
 
 function showFilters(value) {
   let filters = document.querySelector('#Filters');
-  if (!value && filters.className === 'cm-show') {
+  if (!value && filters.classList.contains (cm-show) {
     filters.className = 'cm-hide';
   } else if (value && filters.className === 'cm-hide') {
     filters.className = 'cm-show';
   }
 }
 
-function getMovieForImdb(id) {
-  return fetch('http://www.omdbapi.com/?apikey=422350ff&i=' + id)
-  .then(res => res.json())
-  .catch((error) => {
-    console.log('Error getMoviesForImdb:', error);
-  })
-}
+
 
 function search(movieTitle) {
   showFilters(false);
